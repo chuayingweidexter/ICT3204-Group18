@@ -360,6 +360,76 @@ def modelsFilter_dt(x, y, X_original, Y_original):
     #Predict the response for test dataset
     model_dt.fit(x_train,y_train)
 
+def models_svm(x, y):
+    global model_svm, x_train, x_test, y_train, y_test, predicted_svm
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 42)
+
+    # Feature Scaling
+    sc = StandardScaler()
+    x_train = sc.fit_transform(x_train)
+    x_test = sc.transform(x_test)
+
+
+    # PCA TEST ##
+    pca = PCA(n_components = 2)
+    x_train = pca.fit_transform(x_train)
+    x_test = pca.transform(x_test)
+
+    model_svm = SVC(kernel = 'rbf')
+    model_svm.fit(x_train, y_train)
+    predicted_svm = model_svm.predict(x_test)
+    print_score(model_svm, x_train, y_train, x_test, y_test, train=True)
+
+def modelsFilter_svm(x, y, X_original,Y_original):
+    global x_test, y_test, predicted_svm, x_original_train, x_original_test, y_original_train, y_original_test
+    x_train, x_test, y_train, y_test =  train_test_split(x, y, test_size = 0.1, random_state = 42)
+    x_original_train, x_original_test, y_original_train, y_original_test = sklearn.model_selection.train_test_split(X_original, Y_original, test_size=0.1, random_state=42)
+
+    # Feature Scaling
+    sc = StandardScaler()
+    x_train = sc.fit_transform(x_train)
+    x_test = sc.transform(x_test)
+
+    ## PCA TEST ##
+    pca = PCA(n_components = 2)
+    x_train = pca.fit_transform(x_train)
+    x_test = pca.transform(x_test)
+
+    model_svm = SVC(kernel = 'rbf')
+    model_svm.fit(x_test, y_test)
+    predicted_svm = model_svm.predict(x_test)
+
+    print_score(model_svm, x_train, y_train, x_test, y_test, train=False)  
+    x0, x1 = x_test, y_test
+
+    xx, yy = np.meshgrid(np.arange(start = x0[:, 0].min() - 1, stop = x0[:, 0].max() + 1, step = 0.01),
+                        np.arange(start = x0[:, 1].min() - 1, stop = x0[:, 1].max() + 1, step = 0.01))
+
+    fig, ax = plt.subplots(figsize=(8,6))
+    fig.patch.set_facecolor('white')
+
+    labl1 = {0: "Every other technique", 1: "Filtered technique"}
+    marker1 = {0: '*', 1: 'd'}
+
+    colors = np.array(['green', 'pink'])
+    for i, j in enumerate(np.unique(x1)):
+        ax.scatter(x0[x1 == j, 0], x0[x1 == j, 1], c = colors[i], label = labl1[i],
+                    s=70, marker=marker1[i], alpha=1)
+
+    ax.scatter(model_svm.support_vectors_[:, 0], model_svm.support_vectors_[:, 1], s=40, facecolors='none',
+              edgecolors='navy', label="Support Vectors")
+
+    plt.contourf(xx, yy, model_svm.predict(np.array([xx.ravel(), yy.ravel()]).T).reshape(xx.shape),
+                  alpha = 0.4, cmap = ListedColormap(('blue', 'red')))
+    plt.xlim(xx.min(), xx.max())
+    plt.ylim(yy.min(), yy.max())
+
+    plt.legend()
+    plt.title("SVM: CatBoost with Filter")
+    plt.xlabel("1st PCA")
+    plt.ylabel("2nd PCA")
+    plt.show()
+
 def plotGraph_knn():
     # Visualising the Test set results
     # from matplotlib.colors import ListedColormap
@@ -396,6 +466,34 @@ def plotGraph_dt():
     plt.legend()
     plt.show()
 
+def plotGraph_svm():
+    x0, x1 = x_test, y_test
+    xx, yy = np.meshgrid(np.arange(start = x0[:, 0].min() - 1, stop = x0[:, 0].max() + 1, step = 0.01),
+                        np.arange(start = x0[:, 1].min() - 1, stop = x0[:, 1].max() + 1, step = 0.01))
+
+    fig, ax = plt.subplots(figsize=(8,6))
+    fig.patch.set_facecolor('white')
+
+    labl1 = {0: "t1021", 1: "t1053", 2: "t1059", 3: "t1190", 4: "t1204", 5:"t1592", 6: "t1595"}
+    marker1 = {0: '*', 1: 'd', 2: 'o', 3: '^', 4: 'P', 5: 'x', 6:'+'}
+
+    colors = np.array(['green', 'pink', 'yellow', 'black', 'orange', 'purple', 'blue'])
+
+    for i, j in enumerate(np.unique(x1)):
+        ax.scatter(x0[x1 == j, 0], x0[x1 == j, 1], c = colors[i], label = labl1[i],
+                    s=70, marker=marker1[i], alpha=1)
+    plt.contourf(xx, yy, models_svm.predict(np.array([xx.ravel(), yy.ravel()]).T).reshape(xx.shape),
+                alpha = 0.4, cmap = "tab10")
+    plt.xlim(xx.min(), xx.max())
+    plt.ylim(yy.min(), yy.max())
+
+    plt.legend()
+    plt.title("SVM: CatBoost")
+    plt.xlabel("1st PCA")
+    plt.ylabel("2nd PCA")
+
+    plt.show()
+
 
 if __name__ == "__main__":
     ## Remove deprecated warnings to show more useful information
@@ -430,19 +528,24 @@ if __name__ == "__main__":
             X = list(zip(tmpdf['time_diff_ms'], tmpdf['request'], tmpdf['status'], tmpdf['size'], tmpdf['referer'], tmpdf['user_agent']))
             Y = list(tmptarget['technique'])
 
-
             techniques = [0, 1, 2, 3, 4, 5, 6]
             print("K NEAREST NEIGHBORS")
             models_knn(X, Y)
-            plotGraph_knn()
+            graph_knn_lbl = plotGraph_knn()
             knn_bar_lbl = print_score(model_knn, x_train, y_train, x_test, y_test, train=False)
-            print("KNN BAR LABEL", knn_bar_lbl)
+            # print("KNN BAR LABEL", knn_bar_lbl)
 
             print("DECISION TREE")
             models_dt(X, Y)
-            plotGraph_dt()
+            graph_dt_lbl = plotGraph_dt()
             dt_bar_lbl = print_score(model_dt, x_train, y_train, x_test, y_test, train=False)
 
+            print("SVM")
+            models_knn(X, Y)
+            graph_svm_lbl = plotGraph_svm()
+            svm_bar_lbl = print_score(model_svm, x_train, y_train, x_test, y_test, train=False)
+
+            # print(f"Accuracy: {accuracy}")
 
             ###############################
             ### CatBoost Target Encoder ###
@@ -457,27 +560,32 @@ if __name__ == "__main__":
             X = list(zip(tmpdf['time_diff_ms'], tmpdf['request'], tmpdf['status'], tmpdf['size'], tmpdf['referer'], tmpdf['user_agent']))
             Y = list(tmptarget['technique'])
 
+            # print(f"Accuracy: {accuracy}")
             print("K NEAREST NEIGHBORS")
             models_knn(X, Y)
-            plotGraph_knn()
-            print_score(model_knn, x_train, y_train, x_test, y_test, train=False)
+            graph_knn_cbe = plotGraph_knn()
+            # print_score(model_knn, x_train, y_train, x_test, y_test, train=False)
             knn_bar_cbe = print_score(model_knn, x_train, y_train, x_test, y_test, train=False)
 
             print("DECISION TREE")
             models_dt(X, Y)
-            plotGraph_dt()
+            graph_dt_cbe = plotGraph_dt()
             dt_bar_cbe = print_score(model_dt, x_train, y_train, x_test, y_test, train=False)
+
+            print("SVM")
+            models_svm(X, Y)
+            graph_svm_cbe = plotGraph_svm()
+            svm_bar_cbe = print_score(model_svm, x_train, y_train, x_test, y_test, train=False)
 
             #################
             ### Final Run ###
             #################
             ### CatBoost Target encoder with filtering ###
-
             techniques = target['technique'].unique().tolist()
-
 
             dict_result_knn = {}
             dict_result_dt = {}
+            dict_result_svm = {}
 
             array_data = []
             first_loop = True
@@ -491,7 +599,7 @@ if __name__ == "__main__":
                 result = catboostEncode(tmpdf, tmptarget)
                 tmpdf = result[0]
                 tmptarget = result[1]
-
+                ##### MACHINE LEARNING CODES HERE #####
                 X = list(zip(tmpdf['time_diff_ms'], tmpdf['request'], tmpdf['status'], tmpdf['size'], tmpdf['referer'], tmpdf['user_agent']))
                 Y = list(tmptarget['technique'])
 
@@ -499,8 +607,20 @@ if __name__ == "__main__":
                 Y_original = list(original_target['technique'])
 
                 techniques_catboost = tmptarget['technique'].unique().tolist()
+
+                print("K NEAREST NEIGHBORS")
                 modelsFilter_knn(X, Y, X_original, Y_original)
+                plotGraph_knn()
+
+                print("DECISION TREE")
                 modelsFilter_dt(X, Y, X_original, Y_original)
+                plotGraph_dt()
+
+                print("SVM")
+                modelsFilter_svm(X, Y, X_original, Y_original)
+                plotGraph_svm()
+
+                
 
                 if first_loop:
                     for j in range(len(x_original_test)):
@@ -508,17 +628,21 @@ if __name__ == "__main__":
 
                 result_1_knn = result_1(techniques_catboost, predicted_knn, y_test)
                 result_1_dt = result_1(techniques_catboost, predicted_dt, y_test)
+                result_1_svm = result_1(techniques_catboost, predicted_svm, y_test)
+
 
                 dict_string_1 = ["_predicted", "_actual"]
 
                 for j in range(len(dict_string_1)):
                     add_dict(dict_result_knn, str(techniques[i]) + dict_string_1[j], result_1_knn[j])
                     add_dict(dict_result_dt, str(techniques[i]) + dict_string_1[j], result_1_dt[j])
+                    add_dict(dict_result_svm, str(techniques[i]) + dict_string_1[j], result_1_svm[j])
 
                 first_loop = False
 
             result_2_knn = result_2(dict_result_knn, techniques, array_data)
             result_2_dt = result_2(dict_result_dt, techniques, array_data)
+            result_2_svm = result_2(dict_result_svm, techniques, array_data)
 
             dict_strings_2 = [
                 "overlap_count",
@@ -532,24 +656,33 @@ if __name__ == "__main__":
             for i in range(len(dict_strings_2)):
                 add_dict(dict_result_knn, dict_strings_2[i], result_2_knn[i])
                 add_dict(dict_result_dt, dict_strings_2[i], result_2_dt[i])
+                add_dict(dict_result_svm, dict_strings_2[i], result_2_svm[i])
 
-            df_list = [knn_bar_lbl, knn_bar_cbe, dt_bar_lbl, dt_bar_cbe]
 
-            nrow = 2
+            # for key in dict_result_knn:
+            #     print(f"{key}: {dict_result_knn[key]}")
+
+            df_list = [knn_bar_lbl, knn_bar_cbe, dt_bar_lbl, dt_bar_cbe, svm_bar_lbl, svm_bar_cbe]
+            title_list = ["Label Encode\n     knn", "CatBoost Encode\n     knn", 
+                            "Label Encode\n   Decision Tree", "CatBoost Encode\n   Decision Tree",
+                            "Label Encode\n   SVM", "CatBoost Encode\n   SVM"]
+
+            nrow = 3
             ncol = 2
-            
             fig, axs = plt.subplots(nrow, ncol)
             count = 0
             for r in range(nrow):
                 for c in range(ncol):
-                    df_list[count].plot(ax=axs[r,c], kind='bar')
+                    df_list[count].plot(ax=axs[r,c], kind='bar', title=title_list[count])
                     count+=1
+
 
             plt.tight_layout()
             fig = plt.gcf()
-            fig.set_size_inches(27, 9)
+            fig.set_size_inches(27, 30)
             plt.suptitle('Dashboard', y=1.01, fontsize=32)
             plt.show()
+
         else:
             print("Error: Path does not exist.")
             exit(1)
