@@ -11,6 +11,7 @@ Group 18
 
 ## Installing Packages
 The script requires [Python](https://www.python.org/) v3+ to run.
+For better visualisation of the graphs, visit the [Google Colab](https://colab.research.google.com/drive/1MX3K3HbJ6wrsfDmDNx0AC7ANFU2JEUaJ?authuser=1#scrollTo=aX3aeJtJRzzo)
 
 Install the dependencies.
 ```python
