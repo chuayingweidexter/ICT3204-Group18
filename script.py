@@ -152,11 +152,7 @@ def filterByTechnique(df,technique):
 # Converting DataFrame for ____KHOI_____ machine learning #
 def dataframeToList(df, target):
   x = list(zip(list(df['time_diff_ms']),list(df['request']),list(df['status']),list(df['size']),list(df['referer']),list(df['user_agent'])))
-  # x = list(zip(df['time_diff_ms'],df['request'],df['status'],df['size'],df['referer'],df['user_agent']))
   y = list(target['technique'])
-  # y = np.array(y)
-  # y = np.reshape(y, (-1,1))
-  # y = y.tolist()
   return x,y
 
 # Split Dataframe into features and target
@@ -210,13 +206,8 @@ def print_score(clf, x_train, y_train, x_test, y_test, train=True):
         print(f"Confusion Matrix: n {confusion_matrix(y_train, pred)}n")
         df = pd.DataFrame(clf_report)
 
-        # plot bar graph based on the classification report
-        # bar = df.iloc[:3, :7].T.plot(kind='bar')
         bar = df.iloc[:3, :7].T
-        # print("DF ILOC HERE", df.iloc[:3, :7])
         plt.show()
-        # plot confusion matrix
-        # plot_confusion_matrix(clf, x_train, y_train, cmap = plt.cm.Blues)
         conf_matrix = confusion_matrix(y_train, pred)
         ax = sns.heatmap(conf_matrix, annot = True, linewidth = 2, cmap = 'Blues')
         ax.set_title("Confusion matrix")
@@ -239,12 +230,8 @@ def print_score(clf, x_train, y_train, x_test, y_test, train=True):
         print(f"Confusion Matrix: n {confusion_matrix(y_test, pred)}n")
         df = pd.DataFrame(clf_report)
 
-        # plot bar graph based on the classification report
-        # bar = df.iloc[:3, :7].T.plot(kind='bar')
         bar = df.iloc[:3, :7].T
         plt.show()
-        # plot confusion matrix
-        # plot_confusion_matrix(clf, x_test, y_test, cmap = plt.cm.Blues)
         conf_matrix = confusion_matrix(y_test, pred)
         ax = sns.heatmap(conf_matrix, annot = True, linewidth = 2, cmap = 'Blues')
         ax.set_title("Confusion matrix")
@@ -294,7 +281,6 @@ def add_dict(dict_result, key_name, value):
 def models_knn(X, Y):
     global model_knn, predicted_knn, x_test, y_test, x_train, y_train, x_original_train, x_original_test, y_original_train, y_original_test
     x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.1, random_state=42)
-    # x_original_train, x_original_test, y_original_train, y_original_test = sklearn.model_selection.train_test_split(X_original, Y_original, test_size=0.1, random_state=42)
     sc = StandardScaler()
     x_train = sc.fit_transform(x_train)
     x_test = sc.transform(x_test)
@@ -305,9 +291,7 @@ def models_knn(X, Y):
     
     model_knn = KNeighborsClassifier(n_neighbors=69)
     model_knn.fit(x_train, y_train)
-    # accuracy = model_knn.score(x_test, y_test)
     predicted_knn = model_knn.predict(x_test)
-    # print_score(model_knn, x_train, y_train, x_test, y_test, train=False)
 
 def modelsFilter_knn(X, Y, X_original, Y_original):
     global model_knn, predicted_knn, x_test, y_test, x_train, y_train, x_original_train, x_original_test, y_original_train, y_original_test
@@ -323,9 +307,7 @@ def modelsFilter_knn(X, Y, X_original, Y_original):
     
     model_knn = KNeighborsClassifier(n_neighbors=69)
     model_knn.fit(x_train, y_train)
-    # accuracy = model_knn.score(x_test, y_test)
     predicted_knn = model_knn.predict(x_test)
-    # print_score(model_knn, x_train, y_train, x_test, y_test, train=False)
 
 def models_dt(x, y):    
     global model_dt, x_test, y_test, predicted_dt
@@ -339,24 +321,18 @@ def models_dt(x, y):
     x_train = pca.fit_transform(x_train)
     x_test = pca.transform(x_test)
 
-    # from sklearn.tree import DecisionTreeClassifier
     model_dt = DecisionTreeClassifier()
     model_dt.fit(x_train,y_train)
 
     #prediction
     predicted_dt = model_dt.predict(x_test)
 
-    # from sklearn import metrics
-    # print('Accuracy Score:', metrics.accuracy_score(y_test,y_pred))
-
-    # from sklearn.metrics import confusion_matrix
-    # cm = confusion_matrix(y_test, y_pred)
 
     # Create Decision Tree classifer object
-    model_dt = DecisionTreeClassifier(criterion="entropy", max_depth=3)# Train Decision Tree Classifer
-    model_dt.fit(x_train,y_train)#Predict the response for test dataset
-    # print_score(model_dt, x_train, y_train, x_test, y_test, train=True)
-    # print_score(model_dt, x_train, y_train, x_test, y_test, train=False)
+    # Train Decision Tree Classifer
+    model_dt = DecisionTreeClassifier(criterion="entropy", max_depth=3)
+    #Predict the response for test dataset
+    model_dt.fit(x_train,y_train)
 
 def modelsFilter_dt(x, y, X_original, Y_original):    
     global model_dt, x_test, y_test, predicted_dt, x_original_train, x_original_test, y_original_train, y_original_test
@@ -371,24 +347,18 @@ def modelsFilter_dt(x, y, X_original, Y_original):
     x_train = pca.fit_transform(x_train)
     x_test = pca.transform(x_test)
 
-    # from sklearn.tree import DecisionTreeClassifier
     model_dt = DecisionTreeClassifier()
     model_dt.fit(x_train,y_train)
 
     #prediction
     predicted_dt = model_dt.predict(x_test)
 
-    # from sklearn import metrics
-    # print('Accuracy Score:', metrics.accuracy_score(y_test,y_pred))
-
-    # from sklearn.metrics import confusion_matrix
-    # cm = confusion_matrix(y_test, y_pred)
 
     # Create Decision Tree classifer object
-    model_dt = DecisionTreeClassifier(criterion="entropy", max_depth=3)# Train Decision Tree Classifer
-    model_dt.fit(x_train,y_train)#Predict the response for test dataset
-    # print_score(model_dt, x_train, y_train, x_test, y_test, train=True)
-    # print_score(model_dt, x_train, y_train, x_test, y_test, train=False)
+    # Train Decision Tree Classifer
+    model_dt = DecisionTreeClassifier(criterion="entropy", max_depth=3)
+    #Predict the response for test dataset
+    model_dt.fit(x_train,y_train)
 
 def plotGraph_knn():
     # Visualising the Test set results
@@ -396,8 +366,6 @@ def plotGraph_knn():
     x_set, y_set = x_test, y_test
     x1, x2 = np.meshgrid(np.arange(start = x_set[:,0].min() - 1, stop = x_set[:,0].max() + 1, step = 0.01),
                         np.arange(start = x_set[:,1].min() - 1, stop = x_set[:,1].max() + 1, step = 0.01))
-    # plt.contourf(x1, x2, model_knn.predict(np.array([x1.ravel(), x2.ravel()]).T).reshape(x1.shape),
-    #             alpha = 0.75, cmap = ListedColormap(('red', 'green', "blue", "orange", "yellow")))
     plt.xlim(x1.min(), x1.max())
     plt.ylim(x2.min(), x2.max())
     for i, j in enumerate(np.unique(y_set)):
@@ -410,14 +378,13 @@ def plotGraph_knn():
     plt.show()
 
 def plotGraph_dt():
-    y_pred = model_dt.predict(x_test)# Model Accuracy, how often is the model_dt correct?
+    y_pred = model_dt.predict(x_test)
     print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
     fig = plt.figure(figsize=(25,20))
     tree.plot_tree(model_dt, filled = True, rounded = True, max_depth = 3)
     plt.show()
     X_set, y_set = x_test, y_test
     X1, X2 = np.meshgrid(np.arange(start = X_set[:,0].min()-1, stop= X_set[:,0].max()+1, step = 0.01),np.arange(start = X_set[:,1].min()-1, stop= X_set[:,1].max()+1, step = 0.01))
-    # plt.contourf(X1,X2, model_dt.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape), alpha=0.75, cmap = ListedColormap(("red","green")))
     plt.xlim(X1.min(), X1.max())
     plt.ylim(X2.min(), X2.max())
     for i,j in enumerate(np.unique(y_set)):
@@ -442,7 +409,6 @@ if __name__ == "__main__":
             print(f"Argument {i:>6}: {arg}")
     else:
         if os.path.exists(sys.argv[1]):
-            print(sys.argv[1]) # Remove this line
             ## Reasons to not use OneHotEncoder/get_dummies ###
             df = readLogs(sys.argv[1])
 
@@ -465,15 +431,6 @@ if __name__ == "__main__":
             Y = list(tmptarget['technique'])
 
 
-            # x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1, random_state=42)
-
-            # model_knn = KNeighborsClassifier(n_neighbors=69)
-            # model_knn.fit(x_train, y_train)
-            # accuracy = model_knn.score(x_test, y_test)
-
-            # print_score(model_knn, x_train, y_train, x_test, y_test, train=True)
-
-            # predicted = model_knn.predict(x_test)
             techniques = [0, 1, 2, 3, 4, 5, 6]
             print("K NEAREST NEIGHBORS")
             models_knn(X, Y)
@@ -486,7 +443,6 @@ if __name__ == "__main__":
             plotGraph_dt()
             dt_bar_lbl = print_score(model_dt, x_train, y_train, x_test, y_test, train=False)
 
-            # print(f"Accuracy: {accuracy}")
 
             ###############################
             ### CatBoost Target Encoder ###
@@ -501,14 +457,6 @@ if __name__ == "__main__":
             X = list(zip(tmpdf['time_diff_ms'], tmpdf['request'], tmpdf['status'], tmpdf['size'], tmpdf['referer'], tmpdf['user_agent']))
             Y = list(tmptarget['technique'])
 
-            # x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1, random_state=42)
-
-            # model_knn = KNeighborsClassifier(n_neighbors=69)
-            # model_knn.fit(x_train, y_train)
-            # accuracy = model_knn.score(x_test, y_test)
-
-            # print_score(model_knn, x_train, y_train, x_test, y_test, train=True)
-            # print(f"Accuracy: {accuracy}")
             print("K NEAREST NEIGHBORS")
             models_knn(X, Y)
             plotGraph_knn()
@@ -530,7 +478,6 @@ if __name__ == "__main__":
 
             dict_result_knn = {}
             dict_result_dt = {}
-            # dict_result_svm = {}
 
             array_data = []
             first_loop = True
@@ -544,32 +491,16 @@ if __name__ == "__main__":
                 result = catboostEncode(tmpdf, tmptarget)
                 tmpdf = result[0]
                 tmptarget = result[1]
-                ##### MACHINE LEARNING CODES HERE #####
+
                 X = list(zip(tmpdf['time_diff_ms'], tmpdf['request'], tmpdf['status'], tmpdf['size'], tmpdf['referer'], tmpdf['user_agent']))
                 Y = list(tmptarget['technique'])
 
                 X_original = list(zip(original_df['time_diff_ms'], original_df['request'], original_df['status'], original_df['size'], original_df['referer'], original_df['user_agent']))
                 Y_original = list(original_target['technique'])
 
-                # x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1, random_state=42)
-                # x_original_train, x_original_test, y_original_train, y_original_test = sklearn.model_selection.train_test_split(X_original, Y_original, test_size=0.1, random_state=42)
-
-                # model_knn = KNeighborsClassifier(n_neighbors=69)
-                # model_knn.fit(x_train, y_train)
-
-                
-
                 techniques_catboost = tmptarget['technique'].unique().tolist()
-                # predicted_knn = model_knn.predict(x_test)
-                # print("K NEAREST NEIGHBORS")
                 modelsFilter_knn(X, Y, X_original, Y_original)
-                # plotGraph_knn()
-
-                print("DECISION TREE")
                 modelsFilter_dt(X, Y, X_original, Y_original)
-                # plotGraph_dt()
-
-                
 
                 if first_loop:
                     for j in range(len(x_original_test)):
@@ -577,21 +508,17 @@ if __name__ == "__main__":
 
                 result_1_knn = result_1(techniques_catboost, predicted_knn, y_test)
                 result_1_dt = result_1(techniques_catboost, predicted_dt, y_test)
-                # result_1_svm = result_1(techniques_catboost, predicted_svm, y_test)
-
 
                 dict_string_1 = ["_predicted", "_actual"]
 
                 for j in range(len(dict_string_1)):
                     add_dict(dict_result_knn, str(techniques[i]) + dict_string_1[j], result_1_knn[j])
                     add_dict(dict_result_dt, str(techniques[i]) + dict_string_1[j], result_1_dt[j])
-                    # add_dict(dict_result_svm, str(techniques[i]) + dict_string_1[j], result_1_svm[j])
 
                 first_loop = False
 
             result_2_knn = result_2(dict_result_knn, techniques, array_data)
             result_2_dt = result_2(dict_result_dt, techniques, array_data)
-            # result_2_svm = result_2(dict_result_svm, techniques, array_data)
 
             dict_strings_2 = [
                 "overlap_count",
@@ -605,39 +532,18 @@ if __name__ == "__main__":
             for i in range(len(dict_strings_2)):
                 add_dict(dict_result_knn, dict_strings_2[i], result_2_knn[i])
                 add_dict(dict_result_dt, dict_strings_2[i], result_2_dt[i])
-                # add_dict(dict_result_svm, dict_strings_2[i], result_2_svm[i])
-
-
-            # print_score(model_knn, x_train, y_train, x_test, y_test, train=True)
-
-            # for key in dict_result_knn:
-            #     print(f"{key}: {dict_result_knn[key]}")
 
             df_list = [knn_bar_lbl, knn_bar_cbe, dt_bar_lbl, dt_bar_cbe]
 
             nrow = 2
             ncol = 2
-
-            print("TESTSETSETSETSETSETSETSTSETSETSET")
+            
             fig, axs = plt.subplots(nrow, ncol)
-            # axs[0, 0].plot(knn_bar_lbl["accuracy"], knn_bar_lbl["classes"])
-            # axs[0, 0].plot()
-            # sns.barplot(data=knn_bar_lbl)
-            # axs[0, 0].plot(knn_bar_lbl)
-            # axs[0, 0].set_ylabel("KNN")
-            # axs[0, 0].title("LABEL ENCODE")
-
-            # axs[0, 1].plot(knn_bar_cbe)
-            # axs[0, 1].title("CATBOOST ENCODE")
             count = 0
             for r in range(nrow):
                 for c in range(ncol):
                     df_list[count].plot(ax=axs[r,c], kind='bar')
                     count+=1
-
-            # axs[0,0].setylabel("KNN")
-            # axs[0, 0].title("LABEL ENCODE")
-
 
             plt.tight_layout()
             fig = plt.gcf()
