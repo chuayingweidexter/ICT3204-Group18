@@ -1,0 +1,3 @@
+10/25/22-00:10:46.306942 ,119,31,2,"(http_inspect) UNKNOWN METHOD",TCP,192.168.0.102,64274,192.168.0.254,80,63754,Unknown Traffic,3,alert,Allow
+10/25/22-00:10:53.821253 ,120,18,3,"(http_inspect) PROTOCOL-OTHER HTTP server response before client request ",TCP,192.168.0.254,80,192.168.0.102,55465,49792,Unknown Traffic,3,alert,Allow
+10/25/22-00:10:53.820025 ,119,4,1,"(http_inspect) BARE BYTE UNICODE ENCODING",TCP,192.168.0.102,55465,192.168.0.254,80,4211,Not Suspicious Traffic,3,alert,Allow

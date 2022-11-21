@@ -1,0 +1,7 @@
+,Log Name,Source,Date,Event ID,Task,Level,Opcode,Keyword,User,User Name,Computer,Description
+0,OAlerts,Microsoft,2022-10-24T10:39:03.9500000Z,300,N/A,Information,Info,Classic,N/A,N/A,WinDev2210Eval,Compositor Type: 1WINWORDP1: %3P2: %4P3: %5P4: %6
+1,OAlerts,Microsoft,2022-10-24T10:39:39.7990000Z,300,N/A,Information,Info,Classic,N/A,N/A,WinDev2210Eval,Microsoft Word
+0,Application,Microsoft-Windows-Security-SPP,2022-10-24T10:39:21.1440000Z,16394,N/A,Information,N/A,Classic,N/A,N/A,WinDev2210Eval,Offline downlevel migration succeeded.
+1,Application,Microsoft-Windows-Security-SPP,2022-10-24T10:39:21.5350000Z,1003,N/A,Information,N/A,Classic,N/A,N/A,WinDev2210Eval,The Software Protection service has completed licensing status check.
+2,Application,Microsoft-Windows-Security-SPP,2022-10-24T10:39:21.6590000Z,1003,N/A,Information,N/A,Classic,N/A,N/A,WinDev2210Eval,The Software Protection service has completed licensing status check.
+3,Application,Microsoft-Windows-Security-SPP,2022-10-24T10:39:51.7370000Z,16384,N/A,Information,N/A,Classic,N/A,N/A,WinDev2210Eval,Successfully scheduled Software Protection service for re-start at 2022-12-20T13:21:51Z. Reason: RulesEngine.

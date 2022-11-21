@@ -1,0 +1,14 @@
+Oct 25 02:32:17 515829c4da73 groupadd[238]: group added to /etc/group: name=newuser, GID=1000
+Oct 25 02:32:17 515829c4da73 groupadd[238]: group added to /etc/gshadow: name=newuser
+Oct 25 02:32:17 515829c4da73 groupadd[238]: new group: name=newuser, GID=1000
+Oct 25 02:32:17 515829c4da73 useradd[244]: new user: name=newuser, UID=1000, GID=1000, home=/home/newuser, shell=/bin/bash, from=none
+Oct 25 02:32:17 515829c4da73 usermod[256]: change user 'newuser' password
+Oct 25 02:32:17 515829c4da73 chfn[263]: changed user 'newuser' information
+Oct 25 02:32:17 515829c4da73 chpasswd[270]: pam_unix(chpasswd:chauthtok): password changed for newuser
+Oct 25 02:32:18 515829c4da73 groupadd[274]: group added to /etc/group: name=admin, GID=1001
+Oct 25 02:32:18 515829c4da73 groupadd[274]: group added to /etc/gshadow: name=admin
+Oct 25 02:32:18 515829c4da73 groupadd[274]: new group: name=admin, GID=1001
+Oct 25 02:32:18 515829c4da73 useradd[280]: new user: name=admin, UID=1001, GID=1001, home=/home/admin, shell=/bin/bash, from=none
+Oct 25 02:32:18 515829c4da73 usermod[292]: change user 'admin' password
+Oct 25 02:32:18 515829c4da73 chfn[299]: changed user 'admin' information
+Oct 25 02:32:18 515829c4da73 chpasswd[306]: pam_unix(chpasswd:chauthtok): password changed for admin

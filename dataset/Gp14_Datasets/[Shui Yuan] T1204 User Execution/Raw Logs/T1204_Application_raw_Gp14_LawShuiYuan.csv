@@ -1,0 +1,116 @@
+﻿Level,Date and Time,Source,Event ID,Task Category
+Information,10/23/2022 10:12:46 PM,Microsoft-Windows-Security-SPP,16384,None,Successfully scheduled Software Protection service for re-start at 2022-12-20T13:21:46Z. Reason: RulesEngine.
+Information,10/23/2022 10:12:16 PM,Microsoft-Windows-Security-SPP,1003,None,"The Software Protection service has completed licensing status check.
+Application Id=0ff1ce15-a989-479d-af46-f275c6370663
+Licensing Status=
+1: 3ad61e22-e4fe-497f-bdb1-3e51bd872173, 1, 1 [(0 )(1 )(2 )(3 [0x00000000, 0, 1], [(?)( 1 0x00000000)( 6 0x00000000 5 4213)(?)(?)(?)( 10 0x00000000 msft:rm/algorithm/flags/1.0)(?)])]
+
+"
+Information,10/23/2022 10:12:16 PM,Microsoft-Windows-Security-SPP,1003,None,"The Software Protection service has completed licensing status check.
+Application Id=0ff1ce15-a989-479d-af46-f275c6370663
+Licensing Status=
+1: 149dbce7-a48e-44db-8364-a53386cd4580, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+2: 24fc428e-a37e-4996-ac66-8ea0304a152d, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+3: 26b6a7ce-b174-40aa-a114-316aa56ba9fc, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+4: 35ec6e0e-2df4-4629-9ee3-d525e806b988, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+5: 3ad61e22-e4fe-497f-bdb1-3e51bd872173, 1, 1 [(0 )(1 )(2 )(3 [0x00000000, 0, 1], [(?)( 1 0x00000000)( 6 0x00000000 5 4213)(?)(?)(?)( 10 0x00000000 msft:rm/algorithm/flags/1.0)(?)])]
+6: 46d2c0bd-f912-4ddc-8e67-b90eadc3f83c, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+7: 6e5db8a5-78e6-4953-b793-7422351afe88, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+8: 7984d9ed-81f9-4d50-913d-317ecd863065, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+9: a8119e32-b17c-4bd3-8950-7d1853f4b412, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+10: b27b3d00-9a95-4fcd-a0c2-118cbd5e699b, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+11: b6b47040-b38e-4be2-bf6a-dabf0c41540a, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+12: cbecb6f5-da49-4029-be25-5945ac9750b3, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+13: dfc5a8b0-e9fd-43f7-b4ca-d63f1e749711, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+14: e3dacc06-3bc2-4e13-8e59-8e05f3232325, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+15: e538d623-c066-433d-a6b7-e0708b1fadf7, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+16: ff02e86c-fef0-4063-b39f-74275cddd7c3, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+
+"
+Information,10/23/2022 10:12:02 PM,Microsoft-Windows-Security-SPP,1003,None,"The Software Protection service has completed licensing status check.
+Application Id=0ff1ce15-a989-479d-af46-f275c6370663
+Licensing Status=
+1: 3ad61e22-e4fe-497f-bdb1-3e51bd872173, 1, 1 [(0 )(1 )(2 )(3 [0x00000000, 0, 1], [(?)( 1 0x00000000)( 6 0x00000000 5 4213)(?)(?)(?)( 10 0x00000000 msft:rm/algorithm/flags/1.0)(?)])]
+
+"
+Information,10/23/2022 10:12:02 PM,Microsoft-Windows-Security-SPP,1003,None,"The Software Protection service has completed licensing status check.
+Application Id=0ff1ce15-a989-479d-af46-f275c6370663
+Licensing Status=
+1: 149dbce7-a48e-44db-8364-a53386cd4580, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+2: 24fc428e-a37e-4996-ac66-8ea0304a152d, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+3: 26b6a7ce-b174-40aa-a114-316aa56ba9fc, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+4: 35ec6e0e-2df4-4629-9ee3-d525e806b988, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+5: 3ad61e22-e4fe-497f-bdb1-3e51bd872173, 1, 1 [(0 )(1 )(2 )(3 [0x00000000, 0, 1], [(?)( 1 0x00000000)( 6 0x00000000 5 4213)(?)(?)(?)( 10 0x00000000 msft:rm/algorithm/flags/1.0)(?)])]
+6: 46d2c0bd-f912-4ddc-8e67-b90eadc3f83c, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+7: 6e5db8a5-78e6-4953-b793-7422351afe88, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+8: 7984d9ed-81f9-4d50-913d-317ecd863065, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+9: a8119e32-b17c-4bd3-8950-7d1853f4b412, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+10: b27b3d00-9a95-4fcd-a0c2-118cbd5e699b, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+11: b6b47040-b38e-4be2-bf6a-dabf0c41540a, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+12: cbecb6f5-da49-4029-be25-5945ac9750b3, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+13: dfc5a8b0-e9fd-43f7-b4ca-d63f1e749711, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+14: e3dacc06-3bc2-4e13-8e59-8e05f3232325, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+15: e538d623-c066-433d-a6b7-e0708b1fadf7, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+16: ff02e86c-fef0-4063-b39f-74275cddd7c3, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+
+"
+Information,10/23/2022 10:12:02 PM,Microsoft-Windows-Security-SPP,16394,None,Offline downlevel migration succeeded.
+Information,10/23/2022 10:10:41 PM,Microsoft-Windows-Security-SPP,16384,None,Successfully scheduled Software Protection service for re-start at 2022-12-20T13:21:41Z. Reason: RulesEngine.
+Information,10/23/2022 10:10:08 PM,Microsoft-Windows-Security-SPP,1003,None,"The Software Protection service has completed licensing status check.
+Application Id=0ff1ce15-a989-479d-af46-f275c6370663
+Licensing Status=
+1: 3ad61e22-e4fe-497f-bdb1-3e51bd872173, 1, 1 [(0 )(1 )(2 )(3 [0x00000000, 0, 1], [(?)( 1 0x00000000)( 6 0x00000000 5 4215)(?)(?)(?)( 10 0x00000000 msft:rm/algorithm/flags/1.0)(?)])]
+
+"
+Information,10/23/2022 10:10:08 PM,Microsoft-Windows-Security-SPP,1003,None,"The Software Protection service has completed licensing status check.
+Application Id=0ff1ce15-a989-479d-af46-f275c6370663
+Licensing Status=
+1: 149dbce7-a48e-44db-8364-a53386cd4580, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+2: 24fc428e-a37e-4996-ac66-8ea0304a152d, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+3: 26b6a7ce-b174-40aa-a114-316aa56ba9fc, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+4: 35ec6e0e-2df4-4629-9ee3-d525e806b988, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+5: 3ad61e22-e4fe-497f-bdb1-3e51bd872173, 1, 1 [(0 )(1 )(2 )(3 [0x00000000, 0, 1], [(?)( 1 0x00000000)( 6 0x00000000 5 4215)(?)(?)(?)( 10 0x00000000 msft:rm/algorithm/flags/1.0)(?)])]
+6: 46d2c0bd-f912-4ddc-8e67-b90eadc3f83c, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+7: 6e5db8a5-78e6-4953-b793-7422351afe88, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+8: 7984d9ed-81f9-4d50-913d-317ecd863065, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+9: a8119e32-b17c-4bd3-8950-7d1853f4b412, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+10: b27b3d00-9a95-4fcd-a0c2-118cbd5e699b, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+11: b6b47040-b38e-4be2-bf6a-dabf0c41540a, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+12: cbecb6f5-da49-4029-be25-5945ac9750b3, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+13: dfc5a8b0-e9fd-43f7-b4ca-d63f1e749711, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+14: e3dacc06-3bc2-4e13-8e59-8e05f3232325, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+15: e538d623-c066-433d-a6b7-e0708b1fadf7, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+16: ff02e86c-fef0-4063-b39f-74275cddd7c3, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+
+"
+Information,10/23/2022 10:10:08 PM,Microsoft-Windows-Security-SPP,16394,None,Offline downlevel migration succeeded.
+Information,10/23/2022 10:06:49 PM,Microsoft-Windows-Security-SPP,16384,None,Successfully scheduled Software Protection service for re-start at 2022-12-20T13:21:49Z. Reason: RulesEngine.
+Information,10/23/2022 10:06:19 PM,Microsoft-Windows-Security-SPP,1003,None,"The Software Protection service has completed licensing status check.
+Application Id=0ff1ce15-a989-479d-af46-f275c6370663
+Licensing Status=
+1: 3ad61e22-e4fe-497f-bdb1-3e51bd872173, 1, 1 [(0 )(1 )(2 )(3 [0x00000000, 0, 1], [(?)( 1 0x00000000)( 6 0x00000000 5 4219)(?)(?)(?)( 10 0x00000000 msft:rm/algorithm/flags/1.0)(?)])]
+
+"
+Information,10/23/2022 10:06:18 PM,Microsoft-Windows-Security-SPP,1003,None,"The Software Protection service has completed licensing status check.
+Application Id=0ff1ce15-a989-479d-af46-f275c6370663
+Licensing Status=
+1: 149dbce7-a48e-44db-8364-a53386cd4580, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+2: 24fc428e-a37e-4996-ac66-8ea0304a152d, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+3: 26b6a7ce-b174-40aa-a114-316aa56ba9fc, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+4: 35ec6e0e-2df4-4629-9ee3-d525e806b988, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+5: 3ad61e22-e4fe-497f-bdb1-3e51bd872173, 1, 1 [(0 )(1 )(2 )(3 [0x00000000, 0, 1], [(?)( 1 0x00000000)( 6 0x00000000 5 4219)(?)(?)(?)( 10 0x00000000 msft:rm/algorithm/flags/1.0)(?)])]
+6: 46d2c0bd-f912-4ddc-8e67-b90eadc3f83c, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+7: 6e5db8a5-78e6-4953-b793-7422351afe88, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+8: 7984d9ed-81f9-4d50-913d-317ecd863065, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+9: a8119e32-b17c-4bd3-8950-7d1853f4b412, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+10: b27b3d00-9a95-4fcd-a0c2-118cbd5e699b, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+11: b6b47040-b38e-4be2-bf6a-dabf0c41540a, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+12: cbecb6f5-da49-4029-be25-5945ac9750b3, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+13: dfc5a8b0-e9fd-43f7-b4ca-d63f1e749711, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+14: e3dacc06-3bc2-4e13-8e59-8e05f3232325, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+15: e538d623-c066-433d-a6b7-e0708b1fadf7, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+16: ff02e86c-fef0-4063-b39f-74275cddd7c3, 1, 0 [(0 [0xC004F014, 0, 0], [(?)(?)(?)(?)(?)(?)(?)(?)])(1 )(2 )(3 )]
+
+"
+Information,10/23/2022 10:06:18 PM,Microsoft-Windows-Security-SPP,16394,None,Offline downlevel migration succeeded.
+Information,10/23/2022 10:06:02 PM,Microsoft-Windows-Security-SPP,16384,None,Successfully scheduled Software Protection service for re-start at 2022-12-20T13:22:02Z. Reason: RulesEngine.
